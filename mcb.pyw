@@ -22,8 +22,18 @@ if len(sys.argv) == 3:
     elif sys.argv[1].lower() == '-e' or sys.argv[1][0].lower() == 'e':
         print(sys.argv[2]+":\n"+mcb_shelf[sys.argv[2]])
 elif len(sys.argv) == 2:
+    #help
+    if sys.argv[1].lower() == '-h' or sys.argv[1][0].lower() == 'h':
+        print("-d arg    delete a clipboard")
+        print("-e arg    examine a clipboard")
+        print("-h        command help")
+        print("-l        list all clipboards")
+        print("-s        saves a clipboard")
+        print("-s arg    saves a clipboard with a name")
+        print("-w        wipes all clipboards")
+        
     #save generic
-    if sys.argv[1].lower() == '-s' or sys.argv[1][0].lower() == 's':
+    elif sys.argv[1].lower() == '-s' or sys.argv[1][0].lower() == 's':
         #generic key construction
         temp_key = len(list(mcb_shelf))
         while str(temp_key) in mcb_shelf.keys():
