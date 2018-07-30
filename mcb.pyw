@@ -13,7 +13,7 @@ if len(sys.argv) == 3:
     if sys.argv[1].lower() == '-s':
         mcb_shelf[sys.argv[2]] = pyperclip.paste()
     #delete by name
-    elif sys.argv[1].lower() == '-d':
+    elif sys.argv[1].lower() == '--delete':
         #if no entry by this name exists, don't bother.
         if sys.argv[2] in mcb_shelf:
             #deletion is handled by making the element blank
@@ -53,7 +53,7 @@ elif len(sys.argv) == 2:
                 out = out[0:61] + '...'
             print(out)        
     #wipe all
-    elif sys.argv[1].lower() == '-w':
+    elif sys.argv[1].lower() == '--wipe':
         print(len(list(mcb_shelf)), "cliboard(s) exist. Wipe them?")
         if input("[y/n]\n").lower() == 'y':
             mcb_shelf.clear()
